@@ -1,0 +1,6 @@
+{
+  "name": "skyline-weather-api",
+  "type": "module",
+  "scripts": { "dev": "node --watch index.js", "start": "node index.js" },
+  "dependencies": { "cors": "^2.8.5", "express": "^4.21.2" }
+}
