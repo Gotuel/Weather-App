@@ -22,6 +22,6 @@ export default function App() {
     {!error && <section className="dashboard"><div className="details"><article><Wind/><div><small>WIND</small><b>{Math.round(current.wind_speed_10m)} <em>km/h</em></b></div></article><article><Droplets/><div><small>HUMIDITY</small><b>{current.relative_humidity_2m}<em>%</em></b></div></article><article><Sunrise/><div><small>SUNRISE</small><b>{new Date(daily.sunrise[0]).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</b></div></article><article><Sunset/><div><small>SUNSET</small><b>{new Date(daily.sunset[0]).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</b></div></article></div>
       <div className="forecast"><div className="section-title"><div><p>OUTLOOK</p><h2>Next five days</h2></div><span>°C</span></div><div className="days">{daily.time.map((date, index) => <article key={date}><p>{index === 0 ? 'Today' : new Date(`${date}T12:00`).toLocaleDateString('en-US', {weekday:'short'})}</p><span>{iconFor(daily.weather_code[index])}</span><div><b>{Math.round(daily.temperature_2m_max[index])}°</b><small>{Math.round(daily.temperature_2m_min[index])}°</small></div></article>)}</div></div>
     </section>}
-    {loading && <div className="loading">Updating forecast…</div>}<footer>Data from Open-Meteo · Built with React & Node.js</footer>
+    {loading && <div className="loading">Updating forecast…</div>}<footer>Data from Open-Meteo · Built with React & Node.js by OTAKAYA Abbé Gotuel</footer>
   </main>;
 }
